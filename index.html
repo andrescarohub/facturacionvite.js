@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Software de Facturación</title>
+  <link rel="stylesheet" href="src/index.css">
+</head>
+<body>
+  <header>
+    <h1>Facturación Electrónica</h1>
+  </header>
+  <main>
+    <section id="form-section">
+      <h2>Datos del Cliente</h2>
+      <form id="customer-form">
+        <label for="name">Nombre:</label>
+        <input type="text" id="name" placeholder="Nombre completo" required>
+
+        <label for="id">ID:</label>
+        <input type="text" id="id" placeholder="Cédula o documento" required>
+
+        <label for="email">Correo:</label>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+      </form>
+    </section>
+
+    <section id="product-section">
+      <h2>Selección de Productos</h2>
+      <div id="product-form">
+        <label for="product">Producto:</label>
+        <select id="product">
+          <option value="Producto 1|5000">Producto 1 - $5000</option>
+          <option value="Producto 2|10000">Producto 2 - $10000</option>
+          <option value="Producto 3|15000">Producto 3 - $15000</option>
+        </select>
+
+        <label for="quantity">Cantidad:</label>
+        <input type="number" id="quantity" min="1" value="1">
+        <button id="add-product">Añadir Producto</button>
+      </div>
+    </section>
+
+    <section id="invoice-section">
+      <h2>Factura</h2>
+      <table id="invoice-table">
+        <thead>
+          <tr>
+            <th>Producto</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+            <th>Subtotal</th>
+          </tr>
+        </thead>
+        <tbody id="invoice-body">
+          <!-- Productos añadidos aparecerán aquí -->
+        </tbody>
+      </table>
+      <p id="total">Total (con IVA): $0</p>
+      <button id="pay-button">Pagar</button>
+    </section>
+  </main>
+  <script type="module" src="src/my-element.js"></script>
+  <script type="module" src="src/modules/invoice.js"></script>
+</body>
+</html>
